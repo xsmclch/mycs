@@ -6,9 +6,10 @@ public:
     String(const char* newString);
     ~String(){};
     char& operator[](int offset);
-    int size;
     std::string x;
+    constexpr int getSize(){return size;}
 private:
+    int size;
 };
 
 String::String(const char* newString):x(newString)
