@@ -4,10 +4,8 @@ This is my CS-learning plan for the next 3 - 4 years.
 
 ## Learning Plan
 - [x] Basic **Cpp/C Python BashShell**
-- [ ] Data Structure (**Cpp**) (**here**)
-
-    & Learn **C#**
-- [ ] Algorithm (**Cpp**)
+- [ ] Data Structure (**Cpp**) (**here**) Algorithm (**Cpp**)
+- [ ] Learn **C#** 
 - [ ] OS (**C**)
 - [ ] Learn **html CSS**
 - [ ] Computer NetWorkds
