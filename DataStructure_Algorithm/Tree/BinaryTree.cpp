@@ -15,15 +15,15 @@ public:
     BinaryTree() : root(nullptr) {}
     ~BinaryTree() { DistroyBiTree(root); }
 
+
     void CreateBiTree() { CreateBiTree(root); };
     void PreOrderTraverse() { PreOrderTraverse(root); }
     void InOrderTraverse() { InOrderTraverse(root); }
     void PostOrderTraverse(){ PostOrderTraverse(root); }
-
 private:
     // void CreateBiTree(TreeNode* T); THIS IS WRONG!!!!!
     // You have to pass a reference of a pointer to the function
-    // Or it will just create a copy of the poiter
+    // Or it will just create a copy of the pointer
     void CreateBiTree(TreeNode* &T);
     void DistroyBiTree(TreeNode* &T);
     void PreOrderTraverse(TreeNode *T);
