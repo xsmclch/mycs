@@ -1,0 +1,10 @@
+9 15
+a 2 b f
+b 4 c i g a
+c 3 d i b
+d 5 e h g i c
+e 3 f h d
+f 3 e g a
+g 4 f h d b
+h 3 g d e
+i 3 b c d

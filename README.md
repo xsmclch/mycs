@@ -1,17 +1,14 @@
 # My CS
 
-This is my CS-learning plan for the next 3 - 4 years.
+This is my CS-learning plan for the next 2 years.
 
 ## Learning Plan
 - [x] Basic **Cpp/C Python BashShell**
 - [ ] Data Structure (**Cpp**) (**here**) Algorithm (**Cpp**)
-- [ ] Learn **C#** 
 - [ ] OS (**C**)
-- [ ] Learn **html CSS**
-- [ ] Computer NetWorkds
+- [ ] Computer NetWorkds (**here**)
 - [ ] Computer Architecture
 - [ ] Database
-- [ ] Learn **JavaScript TypeScript** Improve **Cpp Python**
 - [ ] Parallel Computing Distribute System
 - [ ] SE
 - [ ] Computer Graphics
@@ -39,9 +36,10 @@ Other
 - [x] Jupyter lab
 - [x] Virtual Machine
 - [x] Git
-- [x] VPN
 - [ ] Docker
-- [ ] MOre ...
+- [ ] More ...
+
+## Framework
 
 ## Others
 
