@@ -4,8 +4,8 @@ This is my CS-learning plan for the next 2 years.
 
 ## Learning Plan
 - [x] Basic **Cpp/C Python BashShell**
-- [ ] Data Structure (**Cpp**) (**here**) Algorithm (**Cpp**)
-- [ ] OS (**C**)
+- [x] Data Structure (**Cpp**)  Algorithm (**Cpp**)
+- [ ] OS (**C**) (**here**)
 - [ ] Computer NetWorkds (**here**)
 - [ ] Computer Architecture
 - [ ] Database
@@ -57,4 +57,6 @@ Other
 
 -------------------------
 
-    2024/03/10 Setup this repository. (I am still a freshman 😊)
+2024/03/10 Setup this repository. (I am still a freshman 😊)
+
+2024/03/22 Finish learning basic datastructure and algorithm. Start learning computer network and OS.
