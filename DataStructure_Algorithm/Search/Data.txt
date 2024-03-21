@@ -1,0 +1,14 @@
+3 c
+8 h
+4 d
+2 b
+9 i
+10 j
+7 g
+5 e
+6 f
+1 a
+-1
+command:
+javac DataStructure_Algorithm/Search/RedBlackTree.java
+java DataStructure_Algorithm.Search.RedBlackTree < DataStructure_Algorithm/Search/Data.txt
