@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    /* To include padding border and margin! */
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: papayawhip;
+}
+
+h2 {
+    width: 50%;
+    border: 5px solid rgb(0, 0, 255);
+    border-radius: 20px;
+    padding: 1em;
+    outline: 5px solid purple;
+    outline-offset: -15px;
+}
+
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.poem1p {
+    padding: 25%;
+    /* width: 10ch; */
+    font-size: 2rem;
+    color: rgba(173, 29, 84, 0.7);
+    /* color: #EED0D0; */
+}
+
+p.fortest {
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 1.5;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bolder;
+    /* letter-spacing: 0.25em; */
+    word-spacing: 0.25em;
+    padding: 10%;
+    background-color: violet;
+    width: 75%;
+}
+
+.circle {
+    margin: 3rem auto;
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50px;
+    outline: 2px solid red;
+    outline-offset: -0.25rem;
+}
+
+button,
+input {
+    font-size: inherit;
+}

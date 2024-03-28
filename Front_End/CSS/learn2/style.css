@@ -1,0 +1,51 @@
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
+ul {
+    list-style-type: square;
+    text-align: center;
+    list-style-position: inside;
+    line-height: 1.6;
+    /* list-style-image: url("https://www.w3schools.com/css/img_bullet.png");
+    list-style: square inside url("https://www.w3schools.com/css/img_bullet.png"); */
+}
+
+ul li:nth-child(odd) {
+    color: red;
+}
+
+ul ::marker {
+    color: black;
+    font-family: fantasy;
+    font-size: 1em;
+    content: "Only $5 >>";
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: hsl(182, 46%, 54%);
+}
+
+/* a:visited {
+    color: purple;
+} */
+
+/* The order is important */
+/* focus */
+a:hover,
+a:focus {
+    /* color: hsl(208, 91%, 69%); */
+    opacity: 0.7;
+    background-color: gold;
+}
+
+a:active {
+    color: red;
+}

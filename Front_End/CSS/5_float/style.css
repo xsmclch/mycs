@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.block {
+    width: 30vw;
+    height: 30vw;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+}
+
+.left {
+    float: left;
+    margin-right: 1rem;
+}
+
+.right {
+    float: right;
+    margin-left: 1rem;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Now this container doesn't cover the floated elements */
+section {
+    background-color: bisque;
+    border: 1px solid #333;
+    padding: 1rem;
+    /* Not a bad idea to add some overflow to the container */
+    /* overflow: auto; */
+    /* The best way. Anytime you want to contain a floated element, use this property */
+    display: flow-root;
+}
+
+/*
+p {
+     Not so useful, because of the float
+    margin-left: 10px;
+}*/
