@@ -1,3 +1,7 @@
 *.exe
 *.class
+*.jpg
+*.png
+*.pdf
+test.*
 .vscode

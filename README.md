@@ -27,7 +27,7 @@ Main
 Other
 
 - [x] **BashShell**
-- [ ] **HTML CSS**
+- [x] **HTML CSS**
 
 ## Tools
 

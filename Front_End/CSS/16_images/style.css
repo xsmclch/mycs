@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+/* End of Reset */
+
+/* Utility Classes */
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+/* End of Utility Classes */
+
+.container {
+    background-color: rgb(251, 210, 156);
+    background-image: url("youyake.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
+}
+
+.loli {
+    border-bottom: 2px solid #000;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+
+    background-color: hsl(0, 0%, 0%, 0.2);
+}
+
+.h1 {
+    color: #fff;
+    font-size: 500%;
+    text-shadow: 2px 2px 5px #000;
+    /* background-color: hsl(0, 0%, 0%, 0.4);
+    padding: 0.25rem;
+    border-radius: 5px; */
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: aliceblue;
+    /* background-image:
+        url("newyear.jpg"),
+        linear-gradient(to top, steelblue, #fff); */
+    background-repeat: repeat-y, no-repeat;
+    background-position: center, top;
+    background-size: 110% auto;
+}
+
+.profile-pic-figure {
+    width: 35%;
+}
+
+.profile-pic-figure img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
+}
+
+.clip {
+    font-weight: bold;
+    font-size: 25rem;
+    text-align: center;
+    background: url("./newyear.jpg") repeat center center;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
