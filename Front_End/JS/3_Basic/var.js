@@ -184,3 +184,44 @@ let zippedResult = zipTag`${a} + ${b} = ${a + b}`;
 console.log(untaggedResult); // "6 + 9 = 15"
 console.log(taggedResult); // "foobar"
 console.log(zippedResult); // "6 + 9 = 15"
+
+// String.raw()
+function printRaw(strings) {
+    console.log('Actual characters:');
+    for (const string of strings) {
+        console.log(string);
+    }
+
+    console.log('Escaped characters:');
+    for (const rawstring of strings.raw) {
+        console.log(rawstring);
+    }
+}
+
+printRaw`\u00a9${ 'and' }\n`
+
+// Symbol
+let sym = Symbol();
+let fooSym = Symbol('foo');
+console.log(sym, fooSym);
+// let sym = new Symbol(); // TypeError: Symbol is not a constructor
+
+let fooGlobalSymbol = Symbol.for('foo'); 
+let otherFooGlobalSymbol = Symbol.for('foo');
+console.log(fooGlobalSymbol === otherFooGlobalSymbol);
+
+console.log(Symbol.keyFor(fooGlobalSymbol), Symbol.keyFor(fooSym));
+
+// 凡是可以使用字符串或数值作为属性的地方，都可以使用Symbol作为属性名
+let s1 = Symbol('foo'),
+    s2 = Symbol('bar'),
+    s3 = Symbol('baz'),
+    s4 = Symbol('qux');
+
+let o = {}
+o[s1] = 'foo value';
+o[s2] = 'bar value';
+o[s3] = 'baz value';
+o[s4] = 'qux value';
+
+console.log(o);
