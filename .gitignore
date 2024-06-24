@@ -4,4 +4,6 @@
 *.png
 *.pdf
 test.*
+test
 .vscode
+Project*
