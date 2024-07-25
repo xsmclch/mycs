@@ -1,53 +1,88 @@
 	.file	"mstore.c"
 	.text
 	.globl	mult2
-	.def	mult2;	.scl	2;	.type	32;	.endef
-	.seh_proc	mult2
+	.type	mult2, @function
 mult2:
-	.seh_endprologue
-	movl	%ecx, %eax
-	imull	%edx, %eax
+.LFB24:
+	.cfi_startproc
+	endbr64
+	movq	%rdi, %rax
+	imulq	%rsi, %rax
 	ret
-	.seh_endproc
+	.cfi_endproc
+.LFE24:
+	.size	mult2, .-mult2
 	.globl	multstore
-	.def	multstore;	.scl	2;	.type	32;	.endef
-	.seh_proc	multstore
+	.type	multstore, @function
 multstore:
+.LFB25:
+	.cfi_startproc
+	endbr64
 	pushq	%rbx
-	.seh_pushreg	%rbx
-	subq	$32, %rsp
-	.seh_stackalloc	32
-	.seh_endprologue
-	movq	%r8, %rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	movq	%rdx, %rbx
 	call	mult2
-	movl	%eax, (%rbx)
-	addq	$32, %rsp
+	movq	%rax, (%rbx)
 	popq	%rbx
+	.cfi_def_cfa_offset 8
 	ret
-	.seh_endproc
-	.def	__main;	.scl	2;	.type	32;	.endef
-	.section .rdata,"dr"
+	.cfi_endproc
+.LFE25:
+	.size	multstore, .-multstore
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
-	.ascii "2 * 3 --> %1d\12\0"
+	.string	"2 * 3 --> %ld\n"
 	.text
 	.globl	main
-	.def	main;	.scl	2;	.type	32;	.endef
-	.seh_proc	main
+	.type	main, @function
 main:
-	subq	$56, %rsp
-	.seh_stackalloc	56
-	.seh_endprologue
-	call	__main
-	leaq	44(%rsp), %r8
-	movl	$3, %edx
-	movl	$2, %ecx
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rdx
+	movl	$3, %esi
+	movl	$2, %edi
 	call	multstore
-	movl	44(%rsp), %edx
-	leaq	.LC0(%rip), %rcx
-	call	printf
+	movq	(%rsp), %rdx
+	leaq	.LC0(%rip), %rsi
+	movl	$1, %edi
 	movl	$0, %eax
-	addq	$56, %rsp
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	movl	$0, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
 	ret
-	.seh_endproc
-	.ident	"GCC: (x86_64-win32-seh-rev0, Built by MinGW-W64 project) 8.1.0"
-	.def	printf;	.scl	2;	.type	32;	.endef
+.L7:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

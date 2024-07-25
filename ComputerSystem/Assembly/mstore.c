@@ -8,7 +8,7 @@ int main()
 {
     long d;
     multstore(2, 3, &d);
-    printf("2 * 3 --> %1d\n", d);
+    printf("2 * 3 --> %ld\n", d);
     return 0;
 }
 
