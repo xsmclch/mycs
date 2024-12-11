@@ -8,3 +8,6 @@ test.*
 test
 .vscode
 Project*
+__pycache__
+basic
+js30

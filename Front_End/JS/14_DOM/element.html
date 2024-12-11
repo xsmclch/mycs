@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element</title>
+</head>
+
+<body>
+    <div class="" id="myDiv">myDiv</div>
+
+    <!-- 文本节点 -->
+    <!-- 没有内容，因此没有文本节点 -->
+    <div></div>
+
+    <!-- 有空格，因此有一个文本节点 -->
+    <div> </div>
+
+    <!-- 有内容，因此有一个文本节点 -->
+    <div id="txtnd1"><b>Hello</b> World!</div>
+    
+    <div id="setAttr">class attr is set</div>
+</body>
+<script>
+    let myDiv = document.getElementById('myDiv');
+    console.log(myDiv.tagName);
+    console.log(myDiv.tagName === myDiv.nodeName);
+    // if (myDiv.tagName.toLowerCase() === 'div') {
+    //    alert("myDiv's tagName is div");
+    // }
+
+    // 文本节点
+    let txtnd1 = document.getElementById('txtnd1').firstChild;
+
+    console.log(txtnd1.nodeType);
+    console.log(txtnd1.nodeName);
+    console.log(txtnd1.nodeValue);
+    console.log(txtnd1.parentElement);
+</script>
+<script src="element.js"></script>
+</html>

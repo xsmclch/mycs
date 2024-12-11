@@ -1,0 +1,1 @@
+console.log('Foo.js is loaded. 这里是通过动态加载外部文件实现的代码插入');

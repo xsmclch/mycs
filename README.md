@@ -5,29 +5,30 @@ This is my CS-learning plan for the next 2 years.
 ## Learning Plan
 - [x] Basic **Cpp/C Python BashShell**
 - [x] Data Structure (**Cpp**)  Algorithm (**Cpp**)
-- [ ] OS (**C**) (**here**)
-- [ ] Computer NetWorkds (**here**)
+- [x] OS (**C**)
+- [x] Computer NetWorkds
 - [ ] Computer Architecture
 - [ ] Database
 - [ ] Parallel Computing Distribute System
-- [ ] SE
 - [ ] Computer Graphics
-- [ ] Compliers
 - [ ] Security
 - [ ] AI
 
-## Language
+## SE Learning Plan
+- [x] HTML+CSS+JS 
+- [x] Node.js
 
-Main
+## CTF Learning Plan
+
+*coming some*
+
+## Language
 
 - [x] **Cpp Python**
 - [ ] **C#**
-- [ ] **JavaScript TypeScript**
-
-Other
-
+- [x] **JavaScript** 
+- [ ] **TypeScript**
 - [x] **BashShell**
-- [x] **HTML CSS**
 
 ## Tools
 
@@ -38,8 +39,6 @@ Other
 - [x] Git
 - [ ] Docker
 - [ ] More ...
-
-## Framework
 
 ## Others
 
@@ -57,6 +56,8 @@ Other
 
 -------------------------
 
-2024/03/10 Setup this repository. (I am still a freshman 😊)
+2024/03/10 Setup this repository.
 
 2024/03/22 Finish learning basic datastructure and algorithm. Start learning computer network and OS.
+
+2024/11/26

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+
+  <!-- HTML -->
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>Nothing to see here...</p>
+  <!-- Project -->
+  <div id="myDiv0">
+    Hello!
+  </div>
+  <div class="div1">
+  </div>
+  <div class="div2">
+
+  </div>
+  <div id="myDiv2" class="div3">
+
+  </div>
+
+  <p name="p1">
+    This is the first paragraph...
+  </p>
+  <script>
+    // getElements
+    "use strict";
+    let div = document.getElementById('myDiv0');
+    // if (div)
+    // alert(div);
+    // alert(`div.nodeType = ${div.nodeType}\ndiv.nodeName = ${div.nodeName}\ndiv.nodeValue = ${div.nodeValue}`);
+    // alert(`div.parentNode = ${div.parentNode}\ndiv.parentElement = ${div.parentElement}`);
+    console.log(`div.nodeType = ${div.nodeType}\ndiv.nodeName = ${div.nodeName}\ndiv.nodeValue = ${div.nodeValue}`);
+    console.log(`div.parentNode = ${div.parentNode}\ndiv.parentElement = ${div.parentElement}`);
+
+    let tagDiv = document.getElementsByTagName('div');
+
+    // for (const divs of tagDiv)
+    //   console.log(divs);
+
+    let paras = document.getElementsByTagName('p');
+    let p1 = paras.namedItem('p1');
+    console.log(p1);
+    console.log(p1 === paras['p1']);
+
+    let all = document.getElementsByTagName('*');
+    console.log(all.length);
+
+
+    // check
+    console.log(document.implementation.hasFeature('Core', '3.0'));
+  </script>
+
+  <div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr" my_special_attribute='hello!'>
+    another div
+  </div>
+
+  <script>
+    div = document.getElementById('myDiv');
+    console.log(div.id, div.className, div.title, div.lang, div.dir);
+
+    div.className = 'ft';
+    div.title = 'Footer text';
+    div.lang = 'cn';
+    div.dir = 'rtl';
+
+    console.log(div);
+
+    console.log(div.getAttribute('id'), div.getAttribute('className'), div.getAttribute('title'),
+      div.getAttribute('lang'), div.getAttribute('dir'), div.getAttribute('my_special_attribute'));
+
+    div.setAttribute('my_special_attribute', 'Goodbye!');
+    console.log(div.getAttribute('my_special_attribute'));
+  </script>
+  <script src="main.js"></script>
+</body>
+
+</html>

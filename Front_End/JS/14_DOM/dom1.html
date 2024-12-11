@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="" id="myDiv">Hello</div>
+</body>
+<style>
+    div {
+        color: rgb(255, 0, 0);
+    }
+</style>
+<script>
+    let html = document.documentElement;
+    // 不一定位于第一个节点
+    alert(html === document.childNodes[1]);
+    alert(html === document.firstChild);
+
+    let body = document.body;
+    console.log(body instanceof Node);
+
+    // 文档信息
+    // 读取文档标题
+    console.log(`original title: ${document.title}`);
+
+    // 修改文档标题
+    document.title = "New Page Title";
+    console.log(`present title: ${document.title}`);
+
+    // 完整URL
+    console.log("URL", document.URL);
+
+    // domain
+    console.log("Domain", document.domain);
+
+    // ref where it comes from
+    console.log("Referrer", document.referrer);
+
+    // 定位元素
+    console.log();
+</script>
+
+</html>
