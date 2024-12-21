@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            padding: 5px;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: lightcoral;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Event Delegation Example</h1>
+
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <div id="output"></div>
+
+    <script>
+        // 最适合使用事件委托的事件包括：click、mousedown、mouseup、keydown 和 keypress。
+        // mouseover 和 mouseout 事件冒泡，但很难适当处理，且经常需要计算元素位置（因为mouseout 会
+        // 在光标从一个元素移动到它的一个后代节点以及移出元素之外时触发）
+        // 获取父元素
+        const itemList = document.getElementById('itemList');
+        const output = document.getElementById('output');
+
+        // 使用事件委托：绑定事件到父元素 ul
+        itemList.addEventListener('click', function (e) {
+            // 确保点击的目标是 li 元素
+            if (e.target.tagName === 'LI') {
+                output.innerHTML = 'You clicked on: ' + e.target.innerText;
+            }
+        });
+
+        // 动态添加一个新的列表项
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Item 5';
+        itemList.appendChild(newItem);
+    </script>
+
+</body>
+
+</html>

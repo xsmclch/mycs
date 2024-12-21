@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.test {
+            background-color: tomato;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5vw;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* transition: background-color 0.3s ease; */
+        }
+
+        div.start {
+            margin: auto;
+            text-align: center;
+            font-size: 3vw;
+            max-width: 30%;
+            border: solid black 2px;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            background-color: yellow;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        div.start:hover {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">Wait for green...</div>
+    <div class="start">Start</div>
+    <script>
+        const div = document.querySelector('div.test');
+        const btn = document.querySelector('div.start');
+        let reactionStart = null; // 用于记录开始时间
+        let timeoutID = null;    // 用于存储定时器 ID
+
+        // 开始测试
+        function startTest() {
+            div.style.backgroundColor = 'mediumseagreen';
+            div.textContent = 'Click now!';
+            
+            // 添加点击事件监听
+            div.addEventListener('mousedown', handleReaction, { once: true });
+            reactionStart = Date.now();
+        }
+
+        // 处理反应时间逻辑
+        function handleReaction() {
+            const reactionTime = Date.now() - reactionStart;
+            div.style.backgroundColor = 'tomato';
+            div.textContent = `Your reaction time: ${reactionTime} ms`;
+
+            // 清除超时定时器（如果有）
+            if (timeoutID) {
+                clearTimeout(timeoutID);
+                timeoutID = null;
+            }
+        }
+
+        // 开始按钮逻辑
+        btn.addEventListener('click', () => {
+            div.style.backgroundColor = 'tomato';
+            div.textContent = 'Wait for green...';
+
+            // 确保清理旧事件和定时器
+            div.removeEventListener('mousedown', handleReaction);
+            if (timeoutID) {
+                clearTimeout(timeoutID);
+            }
+
+            // 设置随机延时
+            const delay = Math.random() * 3000 + 3000;
+            timeoutID = setTimeout(startTest, delay);
+        });
+    </script>
+</body>
+
+</html>

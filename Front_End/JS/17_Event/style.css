@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.clk {
+    margin: auto;
+    max-width: 300px;
+    min-height: 300px;
+    font-size: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: dodgerblue;
+}
+
+div.clk:hover {
+    background-color: rgba(30, 144, 255, 0.9);
+}
+
+div.links {
+    display: flex;
+}
+
+a {
+    margin: auto;
+    margin-top: 4vh;
+    display: inline;
+    max-width: 20vw;
+    text-align: center;
+    background-color: rgba(234, 80, 41, 0.3);
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue;
+    background-color: rgba(234, 80, 41, 0.5);
+}
+
+a:visited, a:active {
+    color: tomato;
+    background-color: transparent;
+}

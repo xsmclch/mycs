@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.test {
+            background-color: tomato;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5vw;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        div.start {
+            margin: auto;
+            text-align: center;
+            font-size: 3vw;
+            max-width: 30%;
+            border: solid black 2px;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            background-color: yellow;
+        }
+
+        div.start:hover {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">Wait for green...</div>
+    <div class="start">start</div>
+    <script>
+        let div = document.querySelector('div.test');
+        // console.log(div)
+        let btn = document.querySelector('div.start');
+        let rand;
+        let begin;
+        function start() {
+            div.style.backgroundColor = 'mediumseagreen';
+            begin = Date.now();
+            div.addEventListener('mousedown', handler);
+        }
+
+        function handler(e) {
+            let t = Date.now() - begin;
+            console.log(`Your react time:${t}ms`);
+            div.style.backgroundColor = 'tomato';
+            div.innerHTML = `Your react time:${t}ms`;
+            setTimeout(() => { div.removeEventListener('click', handler) }, 1)
+        }
+
+        btn.addEventListener('click', (e) => {
+            div.removeEventListener('mousedown', handler)
+            div.innerHTML = 'Wait for green...'
+            console.log(e.type);
+            rand = Math.random() * 3000 + 3000;
+            console.log(rand);
+            setTimeout(start, rand)
+        })
+    </script>
+</body>
+
+</html>

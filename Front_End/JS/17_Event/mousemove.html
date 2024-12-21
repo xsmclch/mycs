@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position</title>
+    <style>
+        /* body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        } */
+
+        body {
+            background: linear-gradient(to bottom, rgb(114, 114, 224) 0%, rgb(241, 176, 106) 100%);
+        }
+
+        .displayboxes {
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .info {
+            display: flex;
+            width: 60%;
+            max-width: 500px;
+            font-size: 1.5rem;
+            text-align: left;
+            justify-content: space-between;
+            background-color: lightyellow;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        span {
+            justify-self: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="displayboxes">
+        <div class="info">
+            Mouse Position-client: <span id="position">(0, 0)</span>
+        </div>
+        <div class="info">
+            Mouse Position-page: <span id="pagePos">(0, 0)</span>
+        </div>
+        <div class="info">
+            Mouse Position-screen: <span id="screenPos">(0, 0)</span>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <script>
+        // 获取显示鼠标位置的元素
+        const positionDisplay = document.getElementById('position');
+        const pagePos = document.getElementById('pagePos');
+        const screenPos = document.getElementById('screenPos');
+
+        // 监听鼠标移动事件
+        document.addEventListener('mousemove', (event) => {
+            // 获取鼠标的实时位置
+            const x = event.clientX;
+            const y = event.clientY;
+            const px = event.pageX;
+            const py = event.pageY;
+            const sx = event.screenX;
+            const sy = event.screenY;
+
+            // 更新显示内容
+            positionDisplay.textContent = `(${x}, ${y})`;
+            pagePos.textContent = `(${px}, ${py})`;
+            screenPos.textContent = `(${sx}, ${sy})`;
+        });
+    </script>
+</body>
+
+</html>

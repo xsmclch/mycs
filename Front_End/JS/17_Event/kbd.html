@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard&HTML5 Event</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div.title {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: lightcoral;
+            width: 50vw;
+            min-width: 620px;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-family: monospace;
+            border-radius: 2em;
+            border: solid yellow 3px;
+        }
+
+        div.log {
+            display: none;
+            background-color: rgb(200, 200, 200);
+            position: absolute;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        可以尝试右键此元素
+    </div>
+    <input type="text">
+    <div class="log">本元素上的右键展示菜单已被禁用<br>点击非此提示和此元素的其他位置隐藏</div>
+    <script>
+        document.addEventListener('keyup', (event) => {
+            // console.log(event);
+        })
+        document.addEventListener('keydown', () => {
+            // console.log('keydown');
+        })
+
+
+        let div = document.getElementsByTagName('div')[0];
+        let menu = document.querySelector('div.log');
+        
+        
+        let input = document.querySelector('input');
+        input.addEventListener('keyup', (event) => {
+            console.log(event);
+            const kbd = `key:${event.key},keyCode:${event.keyCode}`;
+            div.textContent = kbd;
+        })
+        // textInput事件
+        input.addEventListener('textInput', (event) => {
+            console.log(event);
+            console.log(event.data);
+        })
+        // div.addEventListener('keyup', (event) => {
+            //     console.log(event)
+            // })
+            // 合成时间可以指定输入多个事件合成一个
+
+
+        
+        // HTML5 Event
+        // 监听右键点击事件
+        div.addEventListener('contextmenu', (event) => {
+            event.preventDefault(); // 阻止默认右键菜单
+            // 显示自定义菜单
+            menu.style.display = 'block';
+            menu.style.top = event.pageY + 'px';
+            menu.style.left = event.pageX + 'px';
+    
+            document.addEventListener('click', (event) => {
+                if (!menu.contains(event.target) && event.target != div) {
+                    menu.style.display = 'none';
+                }
+            })
+        })
+        // beforeunload阻止离开/刷新
+        window.addEventListener('beforeunload', (event) => {
+            // event.preventDefault();
+        })
+
+        // window 的 load 事件会在页面完全加载后触发，因为要等待很多外部资源加载完成，所以会花费
+        // 较长时间。而DOMContentLoaded 事件会在DOM树构建完成后立即触发，而不用等待图片、JavaScript
+        // 文件、CSS文件或其他资源加载完成。相对于load事件，DOMContentLoaded可以让开发者在外部资
+        // 源下载的同时就能指定事件处理程序，从而让用户能够更快地与页面交互。 
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log(event);
+            console.log('Content load');
+        })
+        </script>
+    </body>
+    
+    </html>

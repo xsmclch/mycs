@@ -1,0 +1,30 @@
+{
+    "username": "Alice",
+    "password": "secret",
+    "email": "alice@example.com",
+    "profile": {
+        "firstName": "Alice",
+        "lastName": "Wonderland",
+        "age": 25,
+        "gender": "female",
+        "location": "Tokyo, Japan"
+    },
+    "preferences": {
+        "newsletter": true,
+        "notifications": [
+            "email",
+            "sms"
+        ],
+        "theme": "dark"
+    },
+    "history": [
+        {
+            "loginDate": "2024-12-17T12:34:56Z",
+            "ipAddress": "192.168.1.1"
+        },
+        {
+            "loginDate": "2024-11-30T09:22:33Z",
+            "ipAddress": "192.168.1.2"
+        }
+    ]
+}

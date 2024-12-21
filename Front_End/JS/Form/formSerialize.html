@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>表单序列化示例</title>
+    <script>
+        function serializeForm(form) {
+            var formData = new FormData(form);
+            var queryString = new URLSearchParams(formData).toString();
+            return queryString;
+        }
+
+        function showSerializedData(event) {
+            event.preventDefault();  // 阻止表单的默认提交行为
+            var form = document.getElementById("myForm");
+            var serializedData = serializeForm(form);
+            alert("序列化表单数据: " + serializedData);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>表单序列化示例</h1>
+    <form id="myForm" onsubmit="showSerializedData(event)">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" value="Alice"><br><br>
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" value="secret"><br><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

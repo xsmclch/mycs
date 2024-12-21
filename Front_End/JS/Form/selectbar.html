@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>选择框示例</title>
+</head>
+
+<body>
+    <h1>JavaScript 选择框示例</h1>
+    <label for="mySelect">选择一个选项:</label>
+    <select name="location" id="selLocation">
+        <option value="Sunnyvale, CA">Sunnyvale</option>
+        <option value="Los Angeles, CA">Los Angeles</option>
+        <option value="Mountain View, CA">Mountain View</option>
+        <option value="">China</option>
+        <option>Australia</option>
+    </select>
+    <script>
+        let select = document.querySelector('select#selLocation');
+        function showSelected(event) {
+            console.log(event);
+            let selectedValue = select.options[select.selectedIndex].value;
+            let selectedText = select.options[select.selectedIndex].text;
+            alert("您选择了: " + selectedValue + ' ' + selectedText);
+        }
+        select.addEventListener('change', showSelected);
+        // 添加选项
+        let newOpt = document.createElement('option');
+        newOpt.textContent = 'Liyue';
+        newOpt.setAttribute('value', 'Teyvat');
+        select.appendChild(newOpt);
+
+        console.log(select.children);
+
+        // 移除
+        select.remove(4);
+
+    </script>
+</body>
+
+</html>

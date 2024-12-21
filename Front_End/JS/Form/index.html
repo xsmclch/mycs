@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>The input formmethod Attribute</h1>
+
+    <p>The formmethod attribute defines the HTTP method for sending form-data to the action URL.</p>
+
+    <form action="#" method="get" target="_blank">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Input your first name" maxlength="5"
+            autocomplete="on"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Input your last name" maxlength="5"><br><br>
+        <input type="submit" value="Submit using GET">
+        <input type="submit" formmethod="post" value="Submit using POST">
+        <button type="reset">Reset bottun</button>
+    </form>
+    <button class="select">部分选择</button>
+
+    <script>
+        let form = document.forms[0]
+        form.addEventListener('focus', (event) => {
+            console.log('onfocused');
+        })
+        console.log(form);
+        console.log(form.elements);
+        // 实际不建议使用
+        form.addEventListener('reset', (event) => {
+            // 实际不建议使用
+            // event.preventDefault();
+            console.log('Reset?');
+            let res = confirm('Reset form?');
+            console.log(res);
+        });
+        console.log(form.elements[2].form === form);    // true
+        let fn = form.elements['fname'];
+        console.log(fn);
+        // Good!自动选取
+        document.addEventListener('DOMContentLoaded', () => {
+            fn.select();
+            // 可以获取里面内容的长度情况
+            console.log(fn.selectionStart, fn.selectionEnd);
+        })
+        fn.addEventListener('focus', (event) => {
+            console.log('fn get focused')
+            event.target.select();
+        })
+        let select = document.querySelector('button.select');
+        select.addEventListener('click', (event) => {
+            console.log(event);
+            fn.setSelectionRange(0, 4);
+        })
+
+        // 自动切换
+        fn.addEventListener('keyup', (event) => {
+            let target = event.target;
+            if (target.value.length == target.maxLength) {
+                form[1].focus();
+            }
+        })
+
+        // 约束
+        fn.setAttribute('required', '');
+        // fn.setAttribute('required'); 这样不行
+
+        // 输入模式，匹配正则表达式
+        form.elements[1].setAttribute('pattern', '[a-zA-Z]{1,5}');
+    </script>
+</body>
+
+</html>
