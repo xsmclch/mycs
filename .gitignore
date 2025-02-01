@@ -1,10 +1,10 @@
-*.exe
-*.o
-*.class
-*.jpg
-*.png
-*.pdf
-test.*
+*exe
+*o
+*class
+*jpg
+*png
+*pdf
+test*
 test
 .vscode
 Project*
@@ -13,3 +13,6 @@ basic
 js30
 leetcode
 CUDA
+CTF
+node_modules
+private*
