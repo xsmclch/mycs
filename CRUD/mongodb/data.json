@@ -1,0 +1,32 @@
+[
+    {
+        "Tester": "chino",
+        "ref": "animate",
+        "age": 14,
+        "height": 144
+    },
+    {
+        "Tester": "azusa",
+        "height": 150,
+        "team": "HTT",
+        "team_members": ["yui", "mio", "tsumugi", "ritsu"]
+    },
+    {
+        "Tester": "renge",
+        "ref": "galgame",
+        "age": "unknown",
+        "career": "seller"
+    },
+    {
+        "Tester": "kuro",
+        "ref": "galgame",
+        "age": "unknown",
+        "height": 144
+    },
+    {
+        "Tester": "shirosaki_hana",
+        "ref": "animate",
+        "height": 142,
+        "age": 11
+    }
+]

@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.9.7"
+  },
+  "name": "mongodb",
+  "version": "1.0.0",
+  "main": "local_connect.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "node local_connect.js",
+    "rev": "node ./animation_review/backend/index.js",
+    "devrev": "nodemon ./animation_review/backend/index.js",
+    "mongoose": "node ./animation_review/backend/mongoose.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

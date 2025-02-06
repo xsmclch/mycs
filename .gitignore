@@ -1,12 +1,14 @@
-*exe
-*o
-*class
-*jpg
-*png
-*pdf
+*.exe
+*.o
+*.class
+*.jpg
+*.png
+*.pdf
+*.webp
 test*
 test
 .vscode
+.idea
 Project*
 __pycache__
 basic
@@ -16,3 +18,4 @@ CUDA
 CTF
 node_modules
 private*
+.env

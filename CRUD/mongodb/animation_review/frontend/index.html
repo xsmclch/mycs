@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>动漫评论</h1>
+    <div class="container">
+        <div class="card" id="1">
+            <img class="cover" src="./cover/frieren.webp" alt="frieren">
+            <p class="title">葬送的芙莉莲</p>
+            <!-- <a href="review.html" class="review">评论</a> -->
+        </div>
+        <div class="card" id="2">
+            <img class="cover" src="./cover/K-ON.webp" alt="frieren">
+            <p class="title">轻音少女</p>
+            <!-- <a href="review.html" class="review">评论</a> -->
+        </div>
+        <div class="card" id="3">
+            <img class="cover" src="./cover/Wataten_Anime_KV.webp" alt="frieren">
+            <p class="title">天使降临到了我身边</p>
+            <!-- <a href="review.html" class="review">评论</a> -->
+        </div>
+    </div>
+    <script>
+        const cards = document.querySelectorAll(".card");
+        cards.forEach(card => {
+            const review = document.createElement("a");
+            review.href = `review.html?animID=${card.id}&title=${card.querySelector(".title").textContent}`;
+            review.classList.add("review");
+            review.textContent = "评论";
+            review.target = "_blank";
+            card.appendChild(review);
+        })
+    </script>
+</body>
+
+</html>
